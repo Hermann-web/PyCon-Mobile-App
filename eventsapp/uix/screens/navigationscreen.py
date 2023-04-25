@@ -24,10 +24,10 @@ class NavigationScreen(Screen):
     valign: 'center'
     padding: dp(15), dp(15)
     color: app.base_active_bright
-    on_released: app.navigationdrawer.toggle_state()
+    on_press: app.navigationdrawer.toggle_state()
 
 <LeftPanel@BoxLayout+Image>
-    orientation: 'vertical'
+    ##orientation: "vertical"
     padding: dp(7), dp(7)
     source: 'data/images/dots.png'
     allow_stretch: True
@@ -48,51 +48,35 @@ class NavigationScreen(Screen):
             MenuButton
                 id: bt_sched
                 text: 'Schedule'
-                on_released:
-                    load_screen(\
-                    'ScreenSchedule', manager=app.navigation_manager)
+                on_press:load_screen('ScreenSchedule', manager=app.navigation_manager)
             MenuButton
                 text: 'Sponsors'
-                on_released:
-                    load_screen(\
-                    'ScreenSponsor', manager=app.navigation_manager)
+                on_press:load_screen('ScreenSponsor', manager=app.navigation_manager)
             MenuButton
                 text: 'Venue'
-                on_released:
-                    load_screen(\
-                    'ScreenVenue', manager=app.navigation_manager)
+                on_press:load_screen('ScreenVenue', manager=app.navigation_manager)
             MenuButton
                 text: 'OpenSpaces'
-                on_released:
-                    load_screen(\
-                    'ScreenOpenSpaces', manager=app.navigation_manager)
+                on_press:load_screen('ScreenOpenSpaces', manager=app.navigation_manager)
             MenuButton
                 text: 'DevSprints'
-                on_released:
-                    load_screen(\
-                    'ScreenDevSprints', manager=app.navigation_manager)
+                on_press:load_screen('ScreenDevSprints', manager=app.navigation_manager)
             MenuButton
                 text: 'Ticket'
-                on_released:
-                    load_screen(\
-                    'ScreenTicket', manager=app.navigation_manager)
+                on_press:load_screen('ScreenTicket', manager=app.navigation_manager)
             MenuButton
                 text: 'Community'
-                on_released:
-                    load_screen(\
-                    'ScreenCommunity', manager=app.navigation_manager)
+                on_press:load_screen('ScreenCommunity', manager=app.navigation_manager)
             MenuButton
                 down_count: 0
                 text: 'Registration'
-                on_released: self.down_count += 1
+                on_press: self.down_count += 1
                 on_down_count:
                     if args[1] == 5:load_screen(\
                     'ScreenRegister', manager=app.navigation_manager); self.down_count = 0
             MenuButton
                 text: 'About'
-                on_released:
-                    load_screen(\
-                    'ScreenAbout', manager=app.navigation_manager)
+                on_press:load_screen('ScreenAbout', manager=app.navigation_manager)
 
 <Topic@Label>
     opacity: 0
@@ -119,7 +103,7 @@ class NavigationScreen(Screen):
         size_hint_y: 1
         width: self.height
         allow_stretch: True
-        on_released: app.navigationdrawer.toggle_state()
+        on_press: app.navigationdrawer.toggle_state()
 
     Topic
         id: topic
@@ -142,7 +126,7 @@ class NavigationScreen(Screen):
         color: app.base_active_bright[:3] + [.05]
         source: 'atlas://data/default/circle1'
     BoxLayout
-        orientation: "vertical"
+        ##orientation: "vertical"
         TopBar
             id: topbar
         ScreenManager

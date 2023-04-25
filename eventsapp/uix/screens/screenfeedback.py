@@ -10,7 +10,7 @@ class ScreenFeedback(Screen):
     BoxLayout
         padding: '9dp'
         spacing: '9dp'
-        orientation: 'vertical'
+        #orientation: 'vertical'
         ScrollGrid
             padding: '9dp'
             spacing: '9dp'

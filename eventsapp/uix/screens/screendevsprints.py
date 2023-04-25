@@ -20,7 +20,7 @@ class ScreenDevSprints(Screen):
 <ScreenDevSprints>
     name: 'ScreenDevSprints'
     BoxLayout
-        orientation:'vertical'
+        #orientation:'vertical'
         id:main
         BackLabel
             backcolor: app.base_active_color[:3] + [.5]

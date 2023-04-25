@@ -20,6 +20,9 @@ def is_json(data):
 
 def write_oldata(fpath, data):
     with open(fpath, 'w') as f:
+        tpm = ["‘’“”`"]
+        for char in tpm:
+            data = data.replace(char,"'")
         f.write(data)
 
 
@@ -93,19 +96,22 @@ def get_data(endpoint, onsuccess=False):
 
     #use old data to check if anything in the data has been updated.
     oldata = None
-    with open(filepath) as f:
+    with open(filepath, encoding="utf-8") as f:
+        print(f"---filepath={filepath}")
         oldata = f.read()
 
-    if os.environ.get("PYCONF_OFFLINE_MODE", None) == '1':
-        onsuccess = True
+    if os.environ.get("PYCONF_OFFLINE_MODE", None) == '1':onsuccess = True
+    onsuccess = True
     if not onsuccess:
         fetch_remote_data._args.append([endpoint, filepath, oldata])
         trigger_fetch_remote_data()
+    
 
     jsondata = json.loads(oldata)
 
     try:
-        with open(filepath) as fd:
+        with open(filepath, encoding="utf-8") as fd:
+            print(f"---filepath={filepath}")
             jsondata = json.load(fd)
     except (IOError, ValueError):
         # give thread a chance to download and fix data

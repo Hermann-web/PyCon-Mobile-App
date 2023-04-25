@@ -24,7 +24,7 @@ MapView:
 
         Bubble:
             BoxLayout:
-                orientation: "horizontal"
+                #orientation: "horizontal"
                 padding: "5dp"
                 AsyncImage:
                     source: "http://upload.wikimedia.org/wikipedia/commons/9/9d/France-Lille-VieilleBourse-FacadeGrandPlace.jpg"

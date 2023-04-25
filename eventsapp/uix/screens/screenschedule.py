@@ -85,7 +85,7 @@ class ScreenSchedule(Screen):
             Rectangle:
                 size: self.width, dp(45)
                 pos: self.x, self.top - dp(45)
-        orientation: 'vertical'
+        #orientation: 'vertical'
         padding: dp(4)
         TabbedPanel
             id: accordian_days
@@ -98,7 +98,7 @@ class ScreenSchedule(Screen):
 
             background_color: 1, 1, 1, 0
             do_default_tab: False
-            orientation: 'vertical'
+            #orientation: 'vertical'
             tab_width: self.width/5
             tab_pos: 'top_left'
 

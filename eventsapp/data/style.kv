@@ -274,11 +274,11 @@
         pos: root.pos
         size: root.size
         size_hint: None, None
-        orientation: 'vertical'
+        #orientation: 'vertical'
         BoxLayout:
             size_hint_y: None
             height: '30dp'
-            orientation: 'horizontal'
+            #orientation: 'horizontal'
             Widget:
                 # Just for spacing
                 width: '10dp'
@@ -332,7 +332,7 @@
     # multiple selection.
     is_selected: self.path in ctx.controller().selection
 
-    orientation: 'horizontal'
+    #orientation: 'horizontal'
     size_hint_y: None
     height: '48dp' if dp(1) > 1 else '24dp'
     # Don't allow expansion of the ../ node
@@ -565,7 +565,7 @@
             source: self.background_image
 
 <ActionView>:
-    orientation: 'horizontal'
+    #orientation: 'horizontal'
     canvas:
         Color:
             rgba: self.background_color
@@ -741,7 +741,7 @@
     container_title: container_title
 
     BoxLayout:
-        orientation: root.orientation
+        #orientation: root.orientation
         pos: root.pos
         BoxLayout:
             size_hint_x: None if root.orientation == 'horizontal' else 1
@@ -882,7 +882,7 @@
                 size: self.width, 1
 
 <Settings>:
-    orientation: 'horizontal'
+    #orientation: 'horizontal'
     canvas.before:
         Color:
             rgb: 0, 0, 0
@@ -891,7 +891,7 @@
             size: self.size
 
 <InterfaceWithSidebar>:
-    orientation: 'horizontal'
+    #orientation: 'horizontal'
     menu: menu
     content: content
     MenuSidebar:
@@ -901,7 +901,7 @@
         current_uid: menu.selected_uid
 
 <InterfaceWithSpinner>:
-    orientation: 'vertical'
+    #orientation: 'vertical'
     menu: menu
     content: content
     MenuSpinner:
@@ -911,7 +911,7 @@
         current_uid: menu.selected_uid
 
 <MenuSpinner>:
-    orientation: 'horizontal'
+    #orientation: 'horizontal'
     size_hint_y: None
     height: '50dp'
     spinner: spinner
@@ -936,7 +936,7 @@
         pos: root.pos
         cols: 1
         id: menu
-        orientation: 'vertical'
+        #orientation: 'vertical'
         padding: 5
 
         canvas.after:
@@ -1180,10 +1180,10 @@
     foreground_color: (1, 1, 1, 1) if self.hsv[2] * wheel.a < .5 else (0, 0, 0, 1)
     wheel: wheel
     BoxLayout:
-        orientation: 'vertical' if root.width < root.height else 'horizontal'
+        #orientation: 'vertical' if root.width < root.height else 'horizontal'
         spacing: '5sp'
         StackLayout:
-            orientation: 'tb-lr'
+            #orientation: 'tb-lr'
             size_hint_y: None if root.width < root.height else 1
             height: sp(33) * 4 if root.width < root.height else self.height
             canvas:

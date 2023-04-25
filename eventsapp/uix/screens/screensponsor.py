@@ -13,6 +13,9 @@ from kivy.uix.boxlayout import BoxLayout
 class Sponsor(BoxLayout):
     ''' This is a simple StackLayout that holds the image
     '''
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+        self.data = kwargs["data"]
 
     data = ObjectProperty(None)
 
@@ -23,7 +26,7 @@ class ScreenSponsor(Screen):
 <ScreenSponsor>
     name: 'ScreenSponsor'
     BoxLayout
-        orientation: "vertical"
+        #orientation: "vertical"
         BackLabel
             text: "Sponsors"
             backcolor: app.base_inactive_color[:3] + [.5]
@@ -34,7 +37,7 @@ class ScreenSponsor(Screen):
         ScrollView
             GridLayout
                 cols: 1
-                orientation: 'vertical'
+                #orientation: 'vertical'
                 spacing: dp(4)
                 size_hint_y: None
                 height: self.minimum_height
@@ -62,7 +65,7 @@ class ScreenSponsor(Screen):
             webbrowser.open('mailto:sponsorship@in.pycon.org')
 
 <Sponsor>
-    orientation: 'vertical'
+    #orientation: 'vertical'
     spacing: dp(12)
     size_hint: 1, None
     height: dp(120)
@@ -72,6 +75,7 @@ class ScreenSponsor(Screen):
         height: dp(20)
         font_size:dp(18)
     SponsorImage
+        data: {"logo":"fff"}
         on_release:
             import webbrowser
             webbrowser.open(root.data['website'])
@@ -85,6 +89,7 @@ class ScreenSponsor(Screen):
     source: self.parent.data['logo']
     on_release:
         import webbrowser
+        print("---self.parent.data",self.parent.data)
         webbrowser.open(self.parent.data['website'])
 
 ''')
@@ -102,7 +107,9 @@ class ScreenSponsor(Screen):
         main_box = self.ids.main
         #main_box.clear_widgets()
         for s in sponsors:
+            print(s)
             bl = Factory.Sponsor(size_hint_y=.8/len(sponsors), data=s)
+            self.data = s
             main_box.add_widget(bl)
         # footer = Factory.Footer()
         # main_box.add_widget(footer)

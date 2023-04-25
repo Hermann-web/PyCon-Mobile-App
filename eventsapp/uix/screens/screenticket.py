@@ -14,7 +14,7 @@ class ScreenTicket(Screen):
     BoxLayout
         padding: dp(12)
         spacing: dp(12)
-        orientation: 'vertical'
+        #orientation: 'vertical'
         AsyncImage:
             source: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfnU9KBKU6YoSa7bLg08XxPvq7_sujdQoEJRAzD9sDCCaUcTYXnA'
             allow_stretch: True

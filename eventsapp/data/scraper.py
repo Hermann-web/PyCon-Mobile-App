@@ -102,5 +102,7 @@ for track in tracks:
         except KeyError as e:
             tracks[track].update({"cfp":""})
         final_talks["0.0.1"][0].update({track:tracks[track]})
+        final_talks["0.0.1"][0][track]
 file_obj = open("tracks-new.json","w")
+
 file_obj.write(json.dumps(final_talks))

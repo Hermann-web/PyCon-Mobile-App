@@ -47,7 +47,7 @@ class ScreenRegister(Factory.Screen):
     name: 'ScreenRegister'
     on_enter: self._row = ''
     BoxLayout:
-        orientation: 'vertical'
+        #orientation: 'vertical'
         pos_hint: {'center_x': .5}
         padding: dp(9), dp(9)
         spacing: dp(9)
@@ -195,7 +195,7 @@ Popup
     BoxLayout
         padding: dp(9)
         spacing: dp(20)
-        orientation: 'vertical'
+        #orientation: 'vertical'
         FileChooserIconView
             id: fl
             filters: ['*.']

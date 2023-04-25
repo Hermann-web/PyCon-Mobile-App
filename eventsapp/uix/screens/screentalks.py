@@ -66,7 +66,7 @@ class ScreenTalks(Screen):
     spacing: dp(9)
     name: 'ScreenTalks'
     BoxLayout:
-        orientation: 'vertical'
+        #orientation: 'vertical'
         ScrollView
             id: scroll
             ScrollGrid

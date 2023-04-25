@@ -14,10 +14,10 @@ class ScreenVenue(Screen):
     name: 'ScreenVenue'
     BoxLayout
         spacing: dp(13)
-        orientation: 'vertical'
+        #orientation: 'vertical'
         padding: dp(4)
         BoxLayout
-            orientation: 'vertical'
+            #orientation: 'vertical'
             SingleLineLabel:
                 color: 0, 0, 0, 1
                 text: app.venue_name
